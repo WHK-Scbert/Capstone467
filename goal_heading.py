@@ -10,7 +10,7 @@ class GoalHeadingNode(Node):
     def __init__(self):
         super().__init__('goal_heading')
         self.data_publisher = self.create_publisher(Float64, 'goal_heading_topic', 10)
-        self.url = 'https://www.google.co.uk/'
+        self.url = 'https://192.168.50.5:8081/DOA_value.html/'
         self.timer = self.create_timer(1, self.fetch_and_publish_data)
 
     def fetch_and_publish_data(self):
