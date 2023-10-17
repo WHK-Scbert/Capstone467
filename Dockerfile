@@ -80,8 +80,11 @@ RUN sudo apt update && \
 RUN rosdep install --from-paths src --ignore-src -r -y
 
 
-
-
+COPY get-pip.py .
+COPY requirements.txt requirements.txt
+RUN python3 get-pip.py
+RUN python3 -m pip install --upgrade pip
+RUN python3 -m pip install -r requirements.txt
 
 #######################################################################
 
@@ -101,3 +104,5 @@ RUN echo 'exec "$@"' >> /ros_entrypoint.sh
 ENTRYPOINT ["/ros_entrypoint.sh"]
 # Run bash
 CMD ["bash"]
+
+
