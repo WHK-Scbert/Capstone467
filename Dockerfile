@@ -85,7 +85,7 @@ COPY requirements.txt requirements.txt
 RUN python3 get-pip.py
 RUN python3 -m pip install --upgrade pip
 RUN python3 -m pip install -r requirements.txt
-
+RUN echo 'alias agent="cd /home/robomaker/workspace/src/rover/rover/agent_core"' >> ~/.bashrc
 #######################################################################
 
 
