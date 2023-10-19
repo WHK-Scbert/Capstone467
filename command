@@ -8,3 +8,7 @@ docker run -it -v /tmp/.X11-unix/:/tmp/.X11-unix/ \
 robomaker-helloworld-robot-app:latest roslaunch hello_world_robot rotate.launch
 
 
+Mavproxy for Docker
+
+mavproxy.py --master=tcp:127.0.0.1:5760 --out=udp:127.0.0.1:14550 --out=udp:172.17.0.2:14551
+
